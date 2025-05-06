@@ -1,6 +1,6 @@
 # Cloudflare AI Chat Demo
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/akazwz/workersai)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/akazwz/workersai/tree/main/backend)
 
 Live Demo: [workersai.zwz.workers.dev](https://workersai.zwz.workers.dev/)
 
