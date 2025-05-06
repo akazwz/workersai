@@ -1,5 +1,9 @@
 # Cloudflare AI Chat Demo
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/akazwz/workersai)
+
+Live Demo: [workersai.zwz.workers.dev](https://workersai.zwz.workers.dev/)
+
 This is a demo project showcasing a full-stack chat application built entirely on the Cloudflare stack, featuring AI capabilities.
 
 ## Features
@@ -44,8 +48,8 @@ This is a demo project showcasing a full-stack chat application built entirely o
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repo-url>
-    cd <your-repo-name>
+    git clone https://github.com/akazwz/workersai.git
+    cd workersai
     ```
 2.  **Configure Cloudflare:**
     *   Set up necessary Cloudflare resources (KV namespace, Durable Object binding, AI Gateway).
@@ -92,7 +96,7 @@ The application should now be accessible (usually at `http://localhost:5173` bas
 
 ## Contributing
 
-*(Add guidelines for contributing if this is an open-source project).*
+Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## License
 
