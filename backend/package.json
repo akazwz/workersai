@@ -1,0 +1,26 @@
+{
+	"name": "dove",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"cf-typegen": "wrangler types",
+		"format": "biome format --write .",
+		"db:generate": "drizzle-kit generate && node generate-migrations-index.js"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"drizzle-kit": "^0.31.1",
+		"typescript": "^5.8.3",
+		"wrangler": "^4.14.1"
+	},
+	"dependencies": {
+		"@bufbuild/protobuf": "^2.2.5",
+		"@connectrpc/connect": "^2.0.2",
+		"drizzle-orm": "^0.43.1",
+		"openai": "^4.97.0",
+		"zod": "^3.24.4"
+	}
+}

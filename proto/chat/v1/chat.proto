@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package chat.v1;
+
+service ChatService {
+  rpc ListModels(ListModelsRequest) returns (ListModelsResponse);
+  rpc ListConversations(ListConversationsRequest) returns (ListConversationsResponse);
+  rpc CreateConversation(CreateConversationRequest) returns (CreateConversationResponse);
+  rpc DeleteConversation(DeleteConversationRequest) returns (DeleteConversationResponse);
+  rpc RenameConversation(RenameConversationRequest) returns (RenameConversationResponse);
+  rpc PinConversation(PinConversationRequest) returns (PinConversationResponse);
+  rpc UnpinConversation(UnpinConversationRequest) returns (UnpinConversationResponse);
+  rpc ListMessages(ListMessagesRequest) returns (ListMessagesResponse);
+  rpc StreamTTS(StreamTTSRequest) returns (stream StreamTTSResponse);
+  rpc SpeechToText(SpeechToTextRequest) returns (SpeechToTextResponse);
+  rpc AnonymousRegister(AnonymousRegisterRequest) returns (AnonymousRegisterResponse);
+}
+
+message Model {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message ListModelsRequest {}
+
+message ListModelsResponse {
+  repeated Model models = 1;
+}
+
+message Conversation {
+  string id = 1;
+  string title = 2;
+  bool pinned = 3;
+  string created_at = 4;
+  string updated_at = 5;
+}
+
+message ListConversationsRequest {}
+
+message ListConversationsResponse {
+  repeated Conversation conversations = 1;
+}
+
+message CreateConversationRequest {}
+
+message CreateConversationResponse {
+  Conversation conversation = 1;
+}
+
+message DeleteConversationRequest {
+  string conversation_id = 1;
+}
+
+message DeleteConversationResponse {}
+
+message RenameConversationRequest {
+  string conversation_id = 1;
+  string title = 2;
+}
+
+message RenameConversationResponse {}
+
+message PinConversationRequest {
+  string conversation_id = 1;
+}
+
+message PinConversationResponse {}
+
+message UnpinConversationRequest {
+  string conversation_id = 1;
+}
+
+message UnpinConversationResponse {}
+
+message Message {
+  string id = 1;
+  string conversation_id = 2;
+  string role = 3;
+  string content = 4;
+  string created_at = 5;
+}
+
+message ListMessagesRequest {
+  string conversation_id = 1;
+}
+
+message ListMessagesResponse {
+  repeated Message messages = 1;
+}
+
+message StreamTTSRequest {
+  string text = 1;
+}
+
+message StreamTTSResponse {
+  bytes audio = 1;
+}
+
+message SpeechToTextRequest {
+  bytes audio = 1;
+}
+
+message SpeechToTextResponse {
+  string text = 1;
+}
+
+message AnonymousRegisterRequest {}
+
+message AnonymousRegisterResponse {
+  string access_token = 1;
+}
